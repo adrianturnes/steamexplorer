@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class AvatarTest extends TestCase
 {
     private const AVATAR_URL = 'http://example.com/avatar.jpg';
-    public function testAvatarVO(): void
+    public function testAvatar(): void
     {
         $avatar = Avatar::fromString(self::AVATAR_URL);
 

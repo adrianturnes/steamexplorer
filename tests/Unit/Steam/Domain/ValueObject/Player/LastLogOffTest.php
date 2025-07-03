@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 class LastLogOffTest extends TestCase
 {
     const LAST_LOG_OFF = 1672531200;
-    public function testLastLogOffVO(): void
+    public function testLastLogOff(): void
     {
         $lastLogOff = LastLogOff::fromInt(self::LAST_LOG_OFF);
 

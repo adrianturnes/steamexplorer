@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class CommunityVisibilityStateTest extends TestCase
 {
     private const COMMUNITY_VISIBILITY_STATE = 3;
-    public function testCommunityVisibilityStateVO(): void
+    public function testCommunityVisibilityState(): void
     {
         $communityVisibilityState = CommunityVisibilityState::fromInt(self::COMMUNITY_VISIBILITY_STATE);
 

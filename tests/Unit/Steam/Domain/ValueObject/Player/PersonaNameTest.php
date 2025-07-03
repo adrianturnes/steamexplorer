@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class PersonaNameTest extends TestCase
 {
     const TEST_PERSONA_NAME = 'TestPersona';
-    public function testPersonaNameVO(): void
+    public function testPersonaName(): void
     {
         $personaName = PersonaName::fromString(self::TEST_PERSONA_NAME);
 
