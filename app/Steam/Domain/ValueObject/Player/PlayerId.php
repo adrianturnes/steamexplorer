@@ -17,7 +17,7 @@ class PlayerId
         return new self($value);
     }
 
-    public function value(): string
+    public function value(): Ulid
     {
         return $this->value;
     }

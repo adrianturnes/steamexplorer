@@ -14,7 +14,7 @@ use App\Steam\Domain\ValueObject\Player\PlayerId;
 use App\Steam\Domain\ValueObject\Player\ProfileUrl;
 use App\Steam\Domain\ValueObject\Player\SteamId;
 use App\Steam\Domain\ValueObject\Player\TimeCreated;
-use Illuminate\Support\Carbon;
+use Carbon\Carbon;
 use Symfony\Component\Uid\Ulid;
 
 class Player extends AggregateRoot

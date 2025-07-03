@@ -7,9 +7,11 @@ use App\Steam\Domain\ValueObject\Player\Avatar;
 use App\Steam\Domain\ValueObject\Player\CommunityVisibilityState;
 use App\Steam\Domain\ValueObject\Player\LastLogOff;
 use App\Steam\Domain\ValueObject\Player\PersonaName;
+use App\Steam\Domain\ValueObject\Player\PlayerId;
 use App\Steam\Domain\ValueObject\Player\ProfileUrl;
 use App\Steam\Domain\ValueObject\Player\SteamId;
 use App\Steam\Domain\ValueObject\Player\TimeCreated;
+use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
 
 class PlayerTest extends TestCase
@@ -35,6 +37,9 @@ class PlayerTest extends TestCase
         );
 
         $this->assertInstanceOf(Player::class, $player);
+        $this->assertInstanceOf(PlayerId::class, $player->playerId());
+        $this->assertInstanceOf(Carbon::class, $player->createdAt());
+        $this->assertInstanceOf(Carbon::class, $player->updatedAt());
         $this->assertEquals($steamId, $player->steamId());
         $this->assertEquals($personaName, $player->personaName());
         $this->assertEquals($profileUrl, $player->profileUrl());
@@ -63,6 +68,7 @@ class PlayerTest extends TestCase
         $newLastLogOff = LastLogOff::fromInt(1672617600);
         $newTimeCreated = TimeCreated::fromInt(1672617600);
         $newCommunityVisibilityState = CommunityVisibilityState::fromInt(2);
+        $newUpdatedAt = Carbon::now();
 
         $player->setSteamId($newSteamId);
         $player->setPersonaName($newPersonaName);
@@ -71,6 +77,7 @@ class PlayerTest extends TestCase
         $player->setLastLogOff($newLastLogOff);
         $player->setTimeCreated($newTimeCreated);
         $player->setCommunityVisibilityState($newCommunityVisibilityState);
+        $player->setUpdatedAt($newUpdatedAt);
 
         $this->assertEquals($newSteamId, $player->steamId());
         $this->assertEquals($newPersonaName, $player->personaName());
@@ -79,5 +86,6 @@ class PlayerTest extends TestCase
         $this->assertEquals($newLastLogOff, $player->lastLogOff());
         $this->assertEquals($newTimeCreated, $player->timeCreated());
         $this->assertEquals($newCommunityVisibilityState, $player->communityVisibilityState());
+        $this->assertEquals($newUpdatedAt, $player->updatedAt());
     }
 }
