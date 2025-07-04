@@ -12,6 +12,8 @@ shell:
 	@docker compose exec ${PHP_CONTAINER_NAME} bash -l
 composer:
 	@docker compose exec ${PHP_CONTAINER_NAME} bash -l -c 'composer install'
+key:
+	@docker compose exec ${PHP_CONTAINER_NAME} bash -l -c 'php artisan key:generate'
 phpunit:
 	@docker compose exec ${PHP_CONTAINER_NAME} bash -l -c 'vendor/bin/phpunit'
 test-unit:
