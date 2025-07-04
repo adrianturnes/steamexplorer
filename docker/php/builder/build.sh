@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 TAG="8.4"
-TAG_CUSTOM="${TAG}-1.1"
+TAG_CUSTOM="${TAG}-1.2"
 TAG_LATEST="latest"
 
 CI_REGISTRY="adrianturnes"

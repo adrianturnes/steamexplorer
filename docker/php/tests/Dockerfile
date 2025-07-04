@@ -1,4 +1,4 @@
-FROM adrianturnes/http-skelleton-builder:8.4-1.1
+FROM adrianturnes/http-skelleton-builder:8.4-1.2
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
