@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+printf "\e[32m%s\e[0m\n" "Stopping Hoverfly..."
+
+hoverctl stop
+
+rm -f config.yaml

@@ -1,0 +1,89 @@
+{
+    "data": {
+        "pairs": [
+            {
+                "request": {
+                    "path": [
+                        {
+                            "matcher": "exact",
+                            "value": "/ISteamUser/GetPlayerSummaries/v0002"
+                        }
+                    ],
+                    "method": [
+                        {
+                            "matcher": "exact",
+                            "value": "GET"
+                        }
+                    ],
+                    "destination": [
+                        {
+                            "matcher": "exact",
+                            "value": "api.steampowered.com"
+                        }
+                    ],
+                    "scheme": [
+                        {
+                            "matcher": "exact",
+                            "value": "http"
+                        }
+                    ],
+                    "body": [
+                        {
+                            "matcher": "exact",
+                            "value": ""
+                        }
+                    ],
+                    "query": {
+                        "key": [
+                            {
+                                "matcher": "exact",
+                                "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            }
+                        ],
+                        "steamids": [
+                            {
+                                "matcher": "exact",
+                                "value": "38421905763284519"
+                            }
+                        ]
+                    }
+                },
+                "response": {
+                    "status": 200,
+                    "body": "{\"response\":{\"players\":[{\"steamid\":\"38421905763284519\",\"communityvisibilitystate\":3,\"profilestate\":1,\"personaname\":\"Player\",\"profileurl\":\"https://steamcommunity.com/id/Player/\",\"avatar\":\"https://avatars.steamstatic.com/b74d83cce1a6f2d78a45e5cc3b64ea0fdb3abfdc.jpg\",\"avatarmedium\":\"https://avatars.steamstatic.com/b74d83cce1a6f2d78a45e5cc3b64ea0fdb3abfdc_medium.jpg\",\"avatarfull\":\"https://avatars.steamstatic.com/b74d83cce1a6f2d78a45e5cc3b64ea0fdb3abfdc_full.jpg\",\"avatarhash\":\"b74d83cce1a6f2d78a45e5cc3b64ea0fdb3abfdc\",\"lastlogoff\":1751661135,\"personastate\":0,\"realname\":\"Adrián\",\"primaryclanid\":\"892740135267491820\",\"timecreated\":1259854161,\"personastateflags\":0,\"loccountrycode\":\"ES\",\"locstatecode\":\"07\"}]}}",
+                    "encodedBody": false,
+                    "headers": {
+                        "Content-Type": [
+                            "application/json; charset=UTF-8"
+                        ],
+                        "Date": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Expires": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Hoverfly": [
+                            "Was-Here"
+                        ],
+                        "Server": [
+                            "nginx"
+                        ],
+                        "Vary": [
+                            "Accept-Encoding"
+                        ]
+                    },
+                    "templated": false
+                }
+            }
+        ],
+        "globalActions": {
+            "delays": [],
+            "delaysLogNormal": []
+        }
+    },
+    "meta": {
+        "schemaVersion": "v5.3",
+        "hoverflyVersion": "v1.11.2",
+        "timeExported": "2025-07-05T12:17:03Z"
+    }
+}

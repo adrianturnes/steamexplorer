@@ -1,4 +1,4 @@
-FROM adrianturnes/http-skelleton-tests:8.4-1.2
+FROM adrianturnes/steamexplorer-tests:8.4-1.0
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM

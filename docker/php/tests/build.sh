@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 TAG="8.4"
-TAG_CUSTOM="${TAG}-1.2"
+TAG_CUSTOM="${TAG}-1.0"
 TAG_LATEST="latest"
 
 CI_REGISTRY="adrianturnes"
-IMAGE_NAME="http-skelleton-tests"
+IMAGE_NAME="steamexplorer-tests"
 IMAGE="${CI_REGISTRY}/${IMAGE_NAME}"
 
 printf "\e[32m%s\e[0m\n" "Building ${IMAGE_NAME} docker image"

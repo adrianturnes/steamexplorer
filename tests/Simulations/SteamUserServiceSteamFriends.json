@@ -1,0 +1,175 @@
+{
+	"data": {
+		"pairs": [
+			{
+				"request": {
+					"path": [
+						{
+							"matcher": "exact",
+							"value": "/ISteamUser/GetFriendList/v0001"
+						}
+					],
+					"method": [
+						{
+							"matcher": "exact",
+							"value": "GET"
+						}
+					],
+					"destination": [
+						{
+							"matcher": "exact",
+							"value": "api.steampowered.com"
+						}
+					],
+					"scheme": [
+						{
+							"matcher": "exact",
+							"value": "http"
+						}
+					],
+					"body": [
+						{
+							"matcher": "exact",
+							"value": ""
+						}
+					],
+					"query": {
+						"key": [
+							{
+								"matcher": "exact",
+								"value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+							}
+						],
+						"relationship": [
+							{
+								"matcher": "exact",
+								"value": "friend"
+							}
+						],
+						"steamid": [
+							{
+								"matcher": "exact",
+								"value": "38421905763284519"
+							}
+						]
+					}
+				},
+				"response": {
+					"status": 200,
+					"body": "{\"friendslist\":{\"friends\":[{\"steamid\":\"76561198356278439\",\"relationship\":\"friend\",\"friend_since\":1353618732},{\"steamid\":\"76561199284713057\",\"relationship\":\"friend\",\"friend_since\":1349780560}]}}",
+					"encodedBody": false,
+					"headers": {
+						"Content-Type": [
+							"application/json; charset=UTF-8"
+						],
+						"Date": [
+							"Sat, 05 Jul 2025 12:15:59 GMT"
+						],
+						"Expires": [
+							"Sat, 05 Jul 2025 12:15:59 GMT"
+						],
+						"Hoverfly": [
+							"Was-Here"
+						],
+						"Server": [
+							"nginx"
+						],
+						"Vary": [
+							"Accept-Encoding"
+						]
+					},
+					"templated": false
+				}
+			},
+            {
+                "request": {
+                    "path": [
+                        {
+                            "matcher": "exact",
+                            "value": "/ISteamUser/GetFriendList/v0001"
+                        }
+                    ],
+                    "method": [
+                        {
+                            "matcher": "exact",
+                            "value": "GET"
+                        }
+                    ],
+                    "destination": [
+                        {
+                            "matcher": "exact",
+                            "value": "api.steampowered.com"
+                        }
+                    ],
+                    "scheme": [
+                        {
+                            "matcher": "exact",
+                            "value": "http"
+                        }
+                    ],
+                    "body": [
+                        {
+                            "matcher": "exact",
+                            "value": ""
+                        }
+                    ],
+                    "query": {
+                        "key": [
+                            {
+                                "matcher": "exact",
+                                "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            }
+                        ],
+                        "relationship": [
+                            {
+                                "matcher": "exact",
+                                "value": "friend"
+                            }
+                        ],
+                        "steamid": [
+                            {
+                                "matcher": "exact",
+                                "value": "50783129476018342"
+                            }
+                        ]
+                    }
+                },
+                "response": {
+                    "status": 200,
+                    "body": "{}",
+                    "encodedBody": false,
+                    "headers": {
+                        "Content-Type": [
+                            "application/json; charset=UTF-8"
+                        ],
+                        "Date": [
+                            "Sat, 05 Jul 2025 12:15:59 GMT"
+                        ],
+                        "Expires": [
+                            "Sat, 05 Jul 2025 12:15:59 GMT"
+                        ],
+                        "Hoverfly": [
+                            "Was-Here"
+                        ],
+                        "Server": [
+                            "nginx"
+                        ],
+                        "Vary": [
+                            "Accept-Encoding"
+                        ]
+                    },
+                    "templated": false
+                }
+            }
+		],
+		"globalActions": {
+			"delays": [],
+			"delaysLogNormal": []
+		}
+	},
+	"meta": {
+		"schemaVersion": "v5.3",
+		"hoverflyVersion": "v1.11.2",
+		"timeExported": "2025-07-05T12:17:03Z"
+	}
+}

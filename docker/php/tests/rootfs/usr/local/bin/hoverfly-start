@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+HOVERFLY_ENV_FILE=hoverfly.env
+
+if [ ! -f ${HOVERFLY_ENV_FILE} ]; then
+    echo "${HOVERFLY_ENV_FILE} does not exist."
+    exit 1
+fi
+
+source ${HOVERFLY_ENV_FILE}
+
+printf "\e[32m%s\e[0m\n" "Starting Hoverfly..."
+
+hoverctl start \
+         --admin-port 8899 \
+         --certificate /usr/local/share/ca-certificates/hoverfly.crt \
+         --key /usr/local/etc/ssl/private/hoverfly.key
+
+find "${HOVERFLY_SIMULATIONS_DIR}" -name '*.json' -exec hoverctl simulation add {} \;
+
+hoverctl mode spy

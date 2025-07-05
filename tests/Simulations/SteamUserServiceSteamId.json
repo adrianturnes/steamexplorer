@@ -1,0 +1,163 @@
+{
+    "data": {
+        "pairs": [
+            {
+                "request": {
+                    "path": [
+                        {
+                            "matcher": "exact",
+                            "value": "/ISteamUser/ResolveVanityURL/v0001"
+                        }
+                    ],
+                    "method": [
+                        {
+                            "matcher": "exact",
+                            "value": "GET"
+                        }
+                    ],
+                    "destination": [
+                        {
+                            "matcher": "exact",
+                            "value": "api.steampowered.com"
+                        }
+                    ],
+                    "scheme": [
+                        {
+                            "matcher": "exact",
+                            "value": "http"
+                        }
+                    ],
+                    "body": [
+                        {
+                            "matcher": "exact",
+                            "value": ""
+                        }
+                    ],
+                    "query": {
+                        "key": [
+                            {
+                                "matcher": "exact",
+                                "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            }
+                        ],
+                        "vanityurl": [
+                            {
+                                "matcher": "exact",
+                                "value": "PLAYER"
+                            }
+                        ]
+                    }
+                },
+                "response": {
+                    "status": 200,
+                    "body": "{\"response\":{\"steamid\":\"38421905763284519\",\"success\":1}}",
+                    "encodedBody": false,
+                    "headers": {
+                        "Content-Type": [
+                            "application/json; charset=UTF-8"
+                        ],
+                        "Date": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Expires": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Hoverfly": [
+                            "Was-Here"
+                        ],
+                        "Server": [
+                            "nginx"
+                        ],
+                        "Vary": [
+                            "Accept-Encoding"
+                        ]
+                    },
+                    "templated": false
+                }
+            },
+            {
+                "request": {
+                    "path": [
+                        {
+                            "matcher": "exact",
+                            "value": "/ISteamUser/ResolveVanityURL/v0001"
+                        }
+                    ],
+                    "method": [
+                        {
+                            "matcher": "exact",
+                            "value": "GET"
+                        }
+                    ],
+                    "destination": [
+                        {
+                            "matcher": "exact",
+                            "value": "api.steampowered.com"
+                        }
+                    ],
+                    "scheme": [
+                        {
+                            "matcher": "exact",
+                            "value": "http"
+                        }
+                    ],
+                    "body": [
+                        {
+                            "matcher": "exact",
+                            "value": ""
+                        }
+                    ],
+                    "query": {
+                        "key": [
+                            {
+                                "matcher": "exact",
+                                "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            }
+                        ],
+                        "vanityurl": [
+                            {
+                                "matcher": "exact",
+                                "value": "PLAYERXXXXXXXXXX"
+                            }
+                        ]
+                    }
+                },
+                "response": {
+                    "status": 200,
+                    "body": "{\"response\":{\"message\":\"No match\"}}",
+                    "encodedBody": false,
+                    "headers": {
+                        "Content-Type": [
+                            "application/json; charset=UTF-8"
+                        ],
+                        "Date": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Expires": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Hoverfly": [
+                            "Was-Here"
+                        ],
+                        "Server": [
+                            "nginx"
+                        ],
+                        "Vary": [
+                            "Accept-Encoding"
+                        ]
+                    },
+                    "templated": false
+                }
+            }
+        ],
+        "globalActions": {
+            "delays": [],
+            "delaysLogNormal": []
+        }
+    },
+    "meta": {
+        "schemaVersion": "v5.3",
+        "hoverflyVersion": "v1.11.2",
+        "timeExported": "2025-07-05T12:17:03Z"
+    }
+}
