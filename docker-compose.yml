@@ -29,11 +29,11 @@ services:
         volumes:
             - ./:/var/www
         depends_on:
-            -   steam-mysql
+            -   steam-database
         networks:
             - steamexplorer
 
-    steam-mysql:
+    steam-database:
         image: mysql:9.2.0
         container_name: steam-database
         restart: always

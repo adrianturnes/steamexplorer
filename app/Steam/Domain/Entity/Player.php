@@ -65,6 +65,32 @@ class Player extends AggregateRoot
         return $player;
     }
 
+    public static function fromPrimitives(
+        string $ulid,
+        string $steamId,
+        string $personName,
+        string $profileUrl,
+        string $avatar,
+        int $lastLogOff,
+        ?int $timeCreated,
+        int $communityVisibilityState,
+        ?int $createdAt,
+        ?int $updatedAt
+    ): self {
+        return new self(
+            PlayerId::fromUlid(Ulid::fromString($ulid)),
+            SteamId::fromString($steamId),
+            PersonaName::fromString($personName),
+            ProfileUrl::fromString($profileUrl),
+            Avatar::fromString($avatar),
+            LastLogOff::fromInt($lastLogOff),
+            TimeCreated::fromInt($timeCreated),
+            CommunityVisibilityState::fromInt($communityVisibilityState),
+            Carbon::createFromTimestamp($createdAt),
+            Carbon::createFromTimestamp($updatedAt)
+        );
+    }
+
     public function playerId(): PlayerId
     {
         return $this->playerId;
