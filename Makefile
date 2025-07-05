@@ -25,7 +25,7 @@ test-acceptance:
 coverage:
 	@docker compose exec ${PHP_CONTAINER_NAME} bash -l -c 'export XDEBUG_MODE=coverage; vendor/bin/phpunit --coverage-html coverage'
 coverage-report:
-	@docker compose exec ${PHP_CONTAINER_NAME} bash -l -c 'hoverfly-start; export XDEBUG_MODE=coverage; vendor/bin/phpunit --coverage-clover ./coverage.xml; hoverfly-stop'
+	@docker compose exec ${PHP_CONTAINER_NAME} bash -l -c 'hoverfly-start; export XDEBUG_MODE=coverage; vendor/bin/phpunit --coverage-clover ./coverage.xml'
 #CODE analysis
 phpstan:
 	@docker compose exec ${PHP_CONTAINER_NAME} bash -l -c 'vendor/bin/phpstan analyse --memory-limit=-1'

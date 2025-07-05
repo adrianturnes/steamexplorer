@@ -69,7 +69,10 @@ jobs:
           make install
           cp .env.example .env
           make composer
-          php artisan key:generate
+          docker compose exec steam-php php artisan key:generate
+          docker compose exec steam-database bash -c "until mysqladmin ping -h localhost --silent; do sleep 1; done"
+          sleep 10
+          docker compose exec steam-php php artisan migrate
 
       - name: coverage
         run: make coverage-report

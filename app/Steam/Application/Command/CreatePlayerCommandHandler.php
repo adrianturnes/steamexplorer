@@ -27,13 +27,14 @@ class CreatePlayerCommandHandler implements CommandHandler
     public function handle(CreatePlayerCommand $command): void
     {
         $steamId = $this->steamUserService->getSteamId($command->getUserName());
-        $steamUser = $this->steamUserService->getSteamName($steamId);
-
         $player = $this->playerRepository->findBySteamId($steamId);
 
         if($player) {
             throw new PlayerAlreadyExistsException($command->getUserName());
         }
+
+        $steamUser = $this->steamUserService->getSteamName($steamId);
+
 
         $player = $this->createPlayer($steamId, $steamUser);
 

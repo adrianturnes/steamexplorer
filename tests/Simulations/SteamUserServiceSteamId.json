@@ -117,6 +117,80 @@
                         "vanityurl": [
                             {
                                 "matcher": "exact",
+                                "value": "TestPlayer"
+                            }
+                        ]
+                    }
+                },
+                "response": {
+                    "status": 200,
+                    "body": "{\"response\":{\"steamid\":\"12345678901234567\",\"success\":1}}",
+                    "encodedBody": false,
+                    "headers": {
+                        "Content-Type": [
+                            "application/json; charset=UTF-8"
+                        ],
+                        "Date": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Expires": [
+                            "Sat, 05 Jul 2025 12:15:58 GMT"
+                        ],
+                        "Hoverfly": [
+                            "Was-Here"
+                        ],
+                        "Server": [
+                            "nginx"
+                        ],
+                        "Vary": [
+                            "Accept-Encoding"
+                        ]
+                    },
+                    "templated": false
+                }
+            },
+            {
+                "request": {
+                    "path": [
+                        {
+                            "matcher": "exact",
+                            "value": "/ISteamUser/ResolveVanityURL/v0001"
+                        }
+                    ],
+                    "method": [
+                        {
+                            "matcher": "exact",
+                            "value": "GET"
+                        }
+                    ],
+                    "destination": [
+                        {
+                            "matcher": "exact",
+                            "value": "api.steampowered.com"
+                        }
+                    ],
+                    "scheme": [
+                        {
+                            "matcher": "exact",
+                            "value": "http"
+                        }
+                    ],
+                    "body": [
+                        {
+                            "matcher": "exact",
+                            "value": ""
+                        }
+                    ],
+                    "query": {
+                        "key": [
+                            {
+                                "matcher": "exact",
+                                "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                            }
+                        ],
+                        "vanityurl": [
+                            {
+                                "matcher": "exact",
                                 "value": "PLAYERXXXXXXXXXX"
                             }
                         ]
