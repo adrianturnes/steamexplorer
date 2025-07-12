@@ -35,8 +35,9 @@ jobs:
           docker compose exec steam-database bash -c "until mysqladmin ping -h localhost --silent; do sleep 1; done"
           sleep 10
           docker compose exec steam-php php artisan migrate
+          docker compose exec steam-php php artisan db:seed
 
-      - name: Integration tests
+      - name: Acceptance tests
         run: make test-acceptance
 
   tests-integration:
@@ -54,6 +55,7 @@ jobs:
           docker compose exec steam-database bash -c "until mysqladmin ping -h localhost --silent; do sleep 1; done"
           sleep 10
           docker compose exec steam-php php artisan migrate
+          docker compose exec steam-php php artisan db:seed
 
       - name: Integration tests
         run: make test-integration
@@ -73,6 +75,7 @@ jobs:
           docker compose exec steam-database bash -c "until mysqladmin ping -h localhost --silent; do sleep 1; done"
           sleep 10
           docker compose exec steam-php php artisan migrate
+          docker compose exec steam-php php artisan db:seed
 
       - name: coverage
         run: make coverage-report
