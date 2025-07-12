@@ -4,10 +4,16 @@ namespace App\Shared\Infrastructure\Providers;
 
 use App\Shared\Domain\Event\EventBus;
 use App\Shared\Infrastructure\Event\AsyncEventBus;
+use App\Steam\Domain\Repository\GamePlayerRepository;
+use App\Steam\Domain\Repository\GameRepository;
 use App\Steam\Domain\Repository\PlayerRepository;
+use App\Steam\Domain\Service\GamePlayerService as IGamePlayerService;
 use App\Steam\Domain\Service\Steam\SteamPlayerService as ISteamPlayerService;
 use App\Steam\Domain\Service\Steam\SteamUserService as ISteamUserService;
+use App\Steam\Infrastructure\Persistence\EloquentGamePlayerRepository;
+use App\Steam\Infrastructure\Persistence\EloquentGameRepository;
 use App\Steam\Infrastructure\Persistence\EloquentPlayerRepository;
+use App\Steam\Infrastructure\Service\GamePlayerService;
 use App\Steam\Infrastructure\Service\Steam\SteamPlayerService;
 use App\Steam\Infrastructure\Service\Steam\SteamUserService;
 use Illuminate\Support\ServiceProvider;
@@ -22,9 +28,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(EventBus::class, AsyncEventBus::class);
         //Repositories
         $this->app->bind(PlayerRepository::class, EloquentPlayerRepository::class);
+        $this->app->bind(GameRepository::class, EloquentGameRepository::class);
+        $this->app->bind(GamePlayerRepository::class, EloquentGamePlayerRepository::class);
         //Services
         $this->app->bind(ISteamPlayerService::class, SteamPlayerService::class);
         $this->app->bind(ISteamUserService::class, SteamUserService::class);
+        $this->app->bind(IGamePlayerService::class, GamePlayerService::class);
     }
 
     /**

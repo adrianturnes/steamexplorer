@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,6 +13,11 @@ class PlayerSeeder extends Seeder
     public const TEST_PLAYER_1_STEAM_ID = '12345678901234567';
 
     public function run(): void
+    {
+        $this->createPlayer1();
+    }
+
+    private function createPlayer1(): void
     {
         DB::table('players')->insert([
             'id' => self::TEST_PLAYER_1_ID,

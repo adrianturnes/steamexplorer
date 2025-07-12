@@ -6,6 +6,7 @@ namespace App\Steam\Domain\Entity;
 
 use App\Shared\Domain\Entity\AggregateRoot;
 use App\Steam\Domain\Event\PlayerCreatedEvent;
+use App\Steam\Domain\ValueObject\GamePlayer\GamePlayerCollection;
 use App\Steam\Domain\ValueObject\Player\Avatar;
 use App\Steam\Domain\ValueObject\Player\CommunityVisibilityState;
 use App\Steam\Domain\ValueObject\Player\LastLogOff;
@@ -19,6 +20,8 @@ use Symfony\Component\Uid\Ulid;
 
 class Player extends AggregateRoot
 {
+    private GamePlayerCollection $games;
+
     private function __construct(
         private PlayerId                 $playerId,
         private SteamId                  $steamId,
@@ -179,5 +182,15 @@ class Player extends AggregateRoot
     public function setUpdatedAt(Carbon $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    public function games(): GamePlayerCollection
+    {
+        return $this->games;
+    }
+
+    public function setGames(GamePlayerCollection $games): void
+    {
+        $this->games = $games;
     }
 }

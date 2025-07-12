@@ -6,7 +6,7 @@ namespace App\Steam\Domain\Exception;
 
 use Exception;
 
-class PlayerAlreadyExistsException extends Exception
+class GameNotFoundException extends Exception
 {
 
 }

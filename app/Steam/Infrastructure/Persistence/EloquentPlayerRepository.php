@@ -1,15 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Steam\Infrastructure\Persistence;
 
 use App\Steam\Domain\Entity\Player;
+use App\Steam\Domain\Exception\PlayerNotFoundException;
 use App\Steam\Domain\Repository\PlayerRepository;
 use App\Steam\Infrastructure\Models\Player as EloquentPlayer;
-use Symfony\Component\Uid\Ulid;
 
 
 class EloquentPlayerRepository implements PlayerRepository
 {
+    public function findOrFailBySteamId(string $steamId): Player
+    {
+        $player = EloquentPlayer::query()->where('steam_id', '=', $steamId)->first();
+        if (!$player) {
+            throw new PlayerNotFoundException();
+        }
+        return $this->fromPrimitives($player);
+    }
     public function findBySteamId(string $steamId): ?Player
     {
         $player = EloquentPlayer::query()->where('steam_id', '=', $steamId)->first();
