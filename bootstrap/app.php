@@ -15,4 +15,6 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
-    })->create();
+    })->withEvents(discover: [
+        __DIR__ . '/../app/Steam/Application/Listener',
+    ])->create();
