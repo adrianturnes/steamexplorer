@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 # Copy project
-COPY ../../../ /var/www
+COPY ../../../.. /var/www
 
 # Fix permissions
 RUN mkdir -p /var/www/.composer \
@@ -38,5 +38,8 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --working-d
 # Switch back to root
 USER root
 
+RUN sed -i 's|;error_log = log/fpm.log|error_log = /proc/self/fd/2|' /usr/local/etc/php-fpm.d/www.conf \
+    && sed -i 's|;catch_workers_output = yes|catch_workers_output = yes|' /usr/local/etc/php-fpm.d/www.conf
+
 EXPOSE 9000
-CMD ["php-fpm"]
+CMD ["php-fpm", "-F"]

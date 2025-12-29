@@ -23,7 +23,7 @@ class AsyncEventBus implements EventBus
     {
         foreach ($this->events as $event) {
             Log::info('Dispatching event: ' . get_class($event));
-            Event::dispatch($event);
+            AsyncEventJob::dispatch($event);
         }
     }
 }

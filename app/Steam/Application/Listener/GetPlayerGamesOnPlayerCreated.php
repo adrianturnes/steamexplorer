@@ -7,8 +7,9 @@ namespace App\Steam\Application\Listener;
 use App\Steam\Application\Command\UpdatePlayerGamesCommand;
 use App\Steam\Application\Command\UpdatePlayerGamesCommandHandler;
 use App\Steam\Domain\Event\PlayerCreatedEvent;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class GetPlayerGamesOnPlayerCreated
+class GetPlayerGamesOnPlayerCreated implements ShouldQueue
 {
     public function __construct(
         private readonly UpdatePlayerGamesCommandHandler $updatePlayerGamesCommandHandler
